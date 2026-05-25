@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immersive Reader Pro</title>
+  <link rel="stylesheet" href="reader.css">
+</head>
+<body class="theme-nordic font-sans width-medium">
+  <!-- Progress Tracker -->
+  <div class="scroll-tracker" id="scroll-tracker"></div>
+
+  <!-- Settings Control Dashboard -->
+  <aside class="control-panel" id="control-panel">
+    <div class="panel-trigger" id="panel-trigger" title="Settings Panel">
+      <span class="trigger-icon">⚙️</span>
+    </div>
+    
+    <div class="panel-drawer">
+      <div class="drawer-section">
+        <h3>THEME</h3>
+        <div class="theme-grid">
+          <button class="theme-swatch light active" data-theme="light" title="Classic Light"></button>
+          <button class="theme-swatch sepia" data-theme="sepia" title="Warm Sepia"></button>
+          <button class="theme-swatch nordic" data-theme="nordic" title="Nordic Slate"></button>
+          <button class="theme-swatch oled" data-theme="oled" title="OLED Black"></button>
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <h3>FONT STYLE</h3>
+        <div class="btn-group">
+          <button class="style-btn active" id="font-sans">Sans</button>
+          <button class="style-btn" id="font-serif">Serif</button>
+          <button class="style-btn" id="font-mono">Mono</button>
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <h3>TEXT SIZE</h3>
+        <div class="btn-group font-adjust-group">
+          <button class="style-btn size-btn" id="size-dec" title="Decrease size">A-</button>
+          <span class="size-indicator" id="size-val">18px</span>
+          <button class="style-btn size-btn" id="size-inc" title="Increase size">A+</button>
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <h3>COLUMN WIDTH</h3>
+        <div class="btn-group">
+          <button class="style-btn" id="width-narrow">Narrow</button>
+          <button class="style-btn active" id="width-medium">Medium</button>
+          <button class="style-btn" id="width-wide">Wide</button>
+        </div>
+      </div>
+
+      <!-- Advanced Teleprompter Auto-Scroll Section -->
+      <div class="drawer-section divider-top">
+        <h3>📜 TELEPROMPTER MODE</h3>
+        <div class="teleprompter-card">
+          <div class="tele-toggle-row">
+            <span>Auto-Scroll Page</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-autoscroll">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="tele-speed-row" id="tele-speed-row" style="display: none;">
+            <span>Scroll Speed</span>
+            <input type="range" id="scroll-speed" min="1" max="10" value="3" step="1">
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer-section divider-top">
+        <button class="utility-btn" id="btn-download" title="Download article for offline reading">
+          <span class="util-icon">⬇️</span> Save Offline HTML
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Reader View Layout -->
+  <main class="reader-container">
+    <header class="article-header">
+      <!-- Archive Metadata Badge -->
+      <div class="badge-row">
+        <span class="badge badge-source" id="source-badge">Live View</span>
+        <span class="badge badge-archive" id="archive-badge" style="display: none;">Archived Page</span>
+      </div>
+
+      <h1 id="article-title" class="article-title">Loading article...</h1>
+
+      <div class="meta-row">
+        <div class="author-block">
+          <span class="meta-label">BYLINE</span>
+          <span class="meta-value" id="article-author">Loading author...</span>
+        </div>
+        <div class="meta-separator"></div>
+        <div class="time-block">
+          <span class="meta-label">READ TIME</span>
+          <span class="meta-value" id="read-time">calculating...</span>
+        </div>
+        <div class="meta-separator" id="archive-date-separator" style="display: none;"></div>
+        <div class="date-block" id="archive-date-block" style="display: none;">
+          <span class="meta-label">ARCHIVE SNAPSHOT</span>
+          <span class="meta-value" id="archive-date">N/A</span>
+        </div>
+      </div>
+
+      <div class="link-block">
+        <a href="#" target="_blank" id="original-link" class="original-link">Visit original page ↗</a>
+      </div>
+
+      <!-- TTS Immersive Player Console Card -->
+      <div class="tts-console-card" id="tts-console-card">
+        <div class="tts-player-row">
+          <!-- Playback Actions -->
+          <div class="tts-controls">
+            <button class="tts-btn play-btn" id="tts-play" title="Play Text-to-Speech">
+              <span class="tts-play-icon">▶</span>
+            </button>
+            <button class="tts-btn stop-btn" id="tts-stop" disabled title="Stop Text-to-Speech">
+              <span class="tts-stop-icon">■</span>
+            </button>
+          </div>
+
+          <!-- Speed controller -->
+          <div class="tts-speed-selector">
+            <span class="tts-meta-label">SPEED</span>
+            <select class="tts-select" id="tts-speed">
+              <option value="0.8">0.8x</option>
+              <option value="1.0" selected>1.0x</option>
+              <option value="1.2">1.2x</option>
+              <option value="1.5">1.5x</option>
+              <option value="2.0">2.0x</option>
+            </select>
+          </div>
+
+          <!-- Dynamic Speech Voice Selector -->
+          <div class="tts-voice-selector">
+            <span class="tts-meta-label">VOICE</span>
+            <select class="tts-select voice-select" id="tts-voice">
+              <option value="">Default OS Voice</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Status ticker -->
+        <div class="tts-status-ticker" id="tts-ticker">
+          🔊 Offline speech engine active. Ready to narrate.
+        </div>
+      </div>
+    </header>
+
+    <!-- Sanitized Article Content Block -->
+    <article class="article-body" id="article-body">
+      <div class="loader-container">
+        <div class="loader"></div>
+        <p>Compiling distraction-free rendering...</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Offline parsing engines (Local references) -->
+  <script src="readability.js"></script>
+  <script src="dompurify.js"></script>
+  <script src="reader.js"></script>
+</body>
+</html>

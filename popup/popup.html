@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reader Mode Pro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <div class="logo-glow"></div>
+        <img src="../icons/icon48.png" alt="Reader Mode Pro Logo" class="logo-img">
+        <h1>Reader <span class="accent-text">Pro</span></h1>
+      </div>
+      <div class="version">v1.2</div>
+    </header>
+
+    <!-- Scan Status Badge -->
+    <section class="status-card">
+      <div class="pulse-indicator idle" id="status-dot"></div>
+      <div class="status-details">
+        <span class="status-title">STATUS</span>
+        <p class="status-desc" id="status-text">Scanning article compatibility...</p>
+      </div>
+    </section>
+
+    <!-- Ultimate Bypass Dashboard Panel -->
+    <section class="advanced-panel-card">
+      <div class="panel-header-row">
+        <span class="adv-badge">ULTIMATE BYPASS OPTIONS</span>
+      </div>
+      
+      <!-- Toggle 1: Googlebot Crawler -->
+      <div class="adv-toggle-row">
+        <div class="adv-toggle-details">
+          <span class="adv-toggle-title">🤖 Googlebot SEO Spoofing</span>
+          <p class="adv-toggle-desc">Simulates a Google bot query. Bypasses hard subscriber gates.</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-googlebot">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <!-- Toggle 2: Cookie Gater -->
+      <div class="adv-toggle-row border-top">
+        <div class="adv-toggle-details">
+          <span class="adv-toggle-title">🍪 Anti-Meter Cookie Gater</span>
+          <p class="adv-toggle-desc">Strips site cookies. Prevents article counting metrics.</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-cookies">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <!-- Toggle 3: JavaScript Block -->
+      <div class="adv-toggle-row border-top">
+        <div class="adv-toggle-details">
+          <span class="adv-toggle-title">🚫 Disable JavaScript (JS Block)</span>
+          <p class="adv-toggle-desc">Disables scripts. Prevents overlays & text cuts from executing.</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-js">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <!-- Toggle 4: Ad Blocker -->
+      <div class="adv-toggle-row border-top">
+        <div class="adv-toggle-details">
+          <span class="adv-toggle-title">🛡️ Ad & Tracker Blocker</span>
+          <p class="adv-toggle-desc">Blocks ad requests & trackers. Clears visual banner blanks.</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-ads">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Action Center -->
+    <section class="actions-section">
+      <button class="action-btn reader-btn" id="btn-reader" title="Read clean version of this article">
+        <div class="btn-icon">📖</div>
+        <div class="btn-text-content">
+          <span class="btn-title">Immersive Reader</span>
+          <span class="btn-subtitle">Clean, clutter-free reading view</span>
+        </div>
+      </button>
+
+      <button class="action-btn bypass-btn" id="btn-soft" disabled title="Remove subscription banners and unlock scrolling">
+        <div class="btn-icon">⚡</div>
+        <div class="btn-text-content">
+          <span class="btn-title">Bypass Soft Paywall</span>
+          <span class="btn-subtitle">Strip overlays & restore scroll locks</span>
+        </div>
+      </button>
+
+      <!-- Archive Cluster -->
+      <div class="archive-cluster">
+        <button class="action-btn archive-btn" id="btn-archive" title="Load a cached version from the Wayback Machine">
+          <div class="btn-icon">⏳</div>
+          <div class="btn-text-content">
+            <span class="btn-title">Wayback Archive</span>
+            <span class="btn-subtitle">Retrieve paywall-free cached page</span>
+          </div>
+        </button>
+        
+        <div class="cache-fallbacks">
+          <button class="fallback-btn" id="btn-archive-is" title="Query Archive.is fallback cached clone">
+            🌐 Archive.today Search
+          </button>
+          <button class="fallback-btn" id="btn-google-cache" title="Redirect to Google Cache text snapshot">
+            🔍 Google Cache Redirect
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quota & Subscription Status -->
+    <footer class="footer-quota">
+      <div class="quota-progress-container" id="quota-container">
+        <div class="quota-text-row">
+          <span>Monthly Archive Fetches</span>
+          <span class="quota-value" id="quota-value">0 / 5 used</span>
+        </div>
+        <div class="quota-bar-bg">
+          <div class="quota-bar-fill" id="quota-bar-fill" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Upgrade banner -->
+      <div class="upgrade-banner" id="upgrade-banner" style="display: none;">
+        <div class="upgrade-glow"></div>
+        <div class="upgrade-content">
+          <div class="upgrade-info">
+            <span class="upgrade-title">Quota Depleted!</span>
+            <p class="upgrade-desc">Upgrade to Premium for unlimited Wayback lookups and auto-bypass.</p>
+          </div>
+          <button class="upgrade-btn" id="upgrade-btn">Go Pro — $4.99</button>
+        </div>
+      </div>
+      
+      <!-- Premium Success badge -->
+      <div class="premium-badge" id="premium-badge" style="display: none;">
+        <span class="badge-icon">👑</span>
+        <span>Premium Subscriber — Unlimited Access</span>
+      </div>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

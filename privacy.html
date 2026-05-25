@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Reader Mode Pro</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #22d3ee;
+      --accent-glow: rgba(34, 211, 238, 0.15);
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px 20px;
+      padding: 40px;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-top: 0;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #fff, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.025em;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-top: 32px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    p, li {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 24px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .highlight-box {
+      background: var(--accent-glow);
+      border-left: 4px solid var(--accent);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+    .highlight-box p {
+      margin: 0;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <div class="subtitle">Last Updated: May 2026</div>
+
+    <div class="highlight-box">
+      <p>🛡️ Zero-Data Collection Policy: Reader Mode Pro operates 100% locally on your computer. We do not run any remote tracking servers, we do not store your browsing data, and we never transmit your personal information or read contents anywhere.</p>
+    </div>
+
+    <h2>1. Introduction</h2>
+    <p>Reader Mode Pro is committed to protecting your privacy. This Privacy Policy explains our practices regarding information collected from users of our browser extension. We believe in complete transparency and have designed our extension so that you have total control over your web reading experience without sacrificing your privacy.</p>
+
+    <h2>2. Data Collection and Usage</h2>
+    <p><strong>We do not collect any personal data, usage data, or browsing history.</strong></p>
+    <ul>
+      <li><strong>No Remote Tracking:</strong> The extension parses articles, cleans layouts, and manages CSS sheets locally within your active browser tab.</li>
+      <li><strong>Local Processing:</strong> Features like text extraction, DOM sanitization (via DOMPurify), and Text-to-Speech (TTS) narration run entirely inside your browser sandbox. Your offline packages are packaged directly onto your filesystem when requested.</li>
+      <li><strong>Wayback/Archive Fetcher:</strong> When you explicitly request an archived version of a page, a direct API query is made to public web repositories (Wayback Machine). This request is direct from your browser and is only triggered by your manual interaction.</li>
+    </ul>
+
+    <h2>3. Permissions Justification</h2>
+    <p>Reader Mode Pro requests the following permissions solely to enable its functional capabilities:</p>
+    <ul>
+      <li><strong>activeTab / host permissions (&lt;all_urls&gt;):</strong> To parse, extract, and clean cluttered article pages on news portals dynamically when activated.</li>
+      <li><strong>storage:</strong> To save your offline configuration, user settings (font styles, colors, columns), and Text-to-Speech configuration locally on your machine.</li>
+      <li><strong>declarativeNetRequest:</strong> To dynamically intercept and drop intrusive third-party paywall tracking libraries or telemetry SDKs to ensure speed and focus during your reading.</li>
+      <li><strong>contentSettings:</strong> To allow you to selectively toggle JavaScript capability on blocked portals.</li>
+      <li><strong>scripting:</strong> To deploy the layout visual clean-up engines directly inside the active article DOM.</li>
+    </ul>
+
+    <h2>4. Third-Party Services</h2>
+    <p>Because the extension operates 100% locally, it does not integrate with any third-party advertising networks, analytical SDKs, or data brokers. All user visual customizations, checkout mocks, and TTS narration controls are fully self-contained offline units.</p>
+
+    <h2>5. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be updated directly in the extension workspace and repository manifest. We encourage users to verify updates periodically.</p>
+
+    <h2>6. Contact Us</h2>
+    <p>If you have any questions or feedback regarding our local privacy commitment, please open an issue in the official repository or reach out directly.</p>
+
+    <div class="footer">
+      &copy; 2026 Reader Mode Pro. Developed under strict open-source privacy standards.
+    </div>
+  </div>
+</body>
+</html>
