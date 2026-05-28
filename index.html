@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reader Mode Pro</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #22d3ee;
+      --accent-glow: rgba(34, 211, 238, 0.15);
+      --border: rgba(255, 255, 255, 0.08);
+      --btn-bg: #22d3ee;
+      --btn-hover: #06b6d4;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px 20px;
+      padding: 60px 40px;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    .icon {
+      width: 128px;
+      height: 128px;
+      margin-bottom: 24px;
+      border-radius: 24px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-top: 0;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.025em;
+    }
+    p {
+      color: #cbd5e1;
+      font-size: 1.25rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--btn-bg);
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 16px 32px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      box-shadow: 0 10px 20px var(--accent-glow);
+    }
+    .btn:hover {
+      background: var(--btn-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(34, 211, 238, 0.25);
+    }
+    .links {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+    .links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .links a:hover {
+      color: var(--accent);
+    }
+    .features {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      text-align: left;
+    }
+    .feature-card {
+      background: rgba(15, 23, 42, 0.5);
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+    .feature-card h3 {
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="icons/icon128.png" alt="Reader Mode Pro Icon" class="icon" onerror="this.style.display='none'">
+    <h1>Reader Mode Pro</h1>
+    <p>Premium Clean Reader Mode + Ultimate Paywall Bypasser &amp; Archive Viewer. Experience the web without clutter.</p>
+    
+    <a href="https://github.com/harshraj0235/Reader-Mode" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+    
+    <div class="features">
+      <div class="feature-card">
+        <h3>🧹 Clean Layout</h3>
+        <p>Instantly remove ads, popups, and intrusive tracking scripts from your articles.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🔒 Privacy First</h3>
+        <p>100% local processing. No tracking, no data collection, no telemetry.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📖 Archive Viewer</h3>
+        <p>Access archived snapshots of pages with a single click using Wayback Machine integration.</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://github.com/harshraj0235/Reader-Mode/issues">Support</a>
+    </div>
+  </div>
+</body>
+</html>
